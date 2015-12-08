@@ -1,0 +1,225 @@
+			<style>
+			
+			* {
+				padding:0;
+			}
+		
+			ul,ol {
+				list-style-type: none;
+			}
+			/* end css reset */
+
+			.container {	/* posisikan letak slidernya */
+				margin:5% auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.container, ul.slide li img{
+				width: 500px; /* Sesuaikan sendiri */
+				height: 300px;  /* Sesuaikan sendiri */
+			}
+
+			ul.slide {
+				position: absolute;
+				display: block;
+				width:300%;  /* <-- Angka 3 Bergantung pada jumlah slide */
+			}
+
+			.caption {	/* styling untuk deskripsi setiap slide */
+				position: absolute;
+				background-color: rgba(0,0,0,0.5);
+				bottom:0;
+				padding:10px;
+				color:#fff;
+				left: 0;
+				right: 0;
+			}
+
+			/* Yang membuatnya jadi slider */
+				ul.slide li {
+					display: inline-block;
+					float: left;
+					-webkit-box-sizing:border-box;
+					-moz-box-sizing:border-box;
+					ox-sizing:border-box;
+					-webkit-transition: -webkit-transform 2000ms;
+					-moz-transition: -moz-transform 2000ms;
+					transition: -webkit-transform 2000ms, transform 2000ms;
+				}
+				ul.slide li.slide-1 {
+					left: 0%;
+				}
+				ul.slide li.slide-2 {
+					left: 100%;
+				}
+				ul.slide li.slide-3 {
+					left: 200%;
+				}
+				#nav-1:checked ~ ul.slide li{
+					-webkit-transform: translateX(0%);
+					-moz-transform: translateX(0%);
+					transform: translateX(0%);
+				}
+				#nav-2:checked ~ ul.slide li{
+					-webkit-transform: translateX(-100%);
+					-moz-transform: translateX(-100%);
+					transform: translateX(-100%);
+				}
+				#nav-3:checked ~ ul.slide li {
+					-webkit-transform: translateX(-200%);
+					-moz-transform: translateX(-200%);
+					transform: translateX(-200%);
+				}
+
+			.radio-nav { /* menghilangkan radio button */
+				display: none;
+			}
+				
+				/* styling untuk tombol next dan previous slide */
+				.nav-arrow {
+					position: absolute;
+					top:45%;
+					width:50px;
+					height: 50px;
+				}
+				.nav-next {
+					right:10px;
+				}
+				.nav-prev {
+					left:10px;
+				}
+				.nav-arrow label {
+					-webkit-transition:all 0.3s;
+					-moz-transition:all 0.3s;
+					transition:all 0.3s;
+					background-color: rgba(0,0,0,0.3);
+					color: #fff;
+					border-radius: 50%;
+					display: block;
+					position: absolute;
+					padding:15px 20px;
+					cursor: pointer;
+					z-index: 1;
+					opacity: 0;
+					font-weight: bold;
+					line-height: 1;
+				}
+				.container:hover .nav-arrow label{
+					background-color: rgba(0,0,0,0.7);
+				}
+				/* end styling untuk tombol next dan previous slide */
+				/*Setiap slide mempunya tombol prev dan next-nya masing-masing. Nah, tampilkan tombol yang tepat dengan kode dibawah ini*/ 
+				#nav-1:checked ~ .nav-prev label.nav-3,
+				#nav-1:checked ~ .nav-next label.nav-2,
+				#nav-2:checked ~ .nav-prev label.nav-1,
+				#nav-2:checked ~ .nav-next label.nav-3,
+				#nav-3:checked ~ .nav-prev label.nav-2,
+				#nav-3:checked ~ .nav-next label.nav-1 {
+					z-index: 2;
+					opacity: 1;
+				}
+				/* end */
+
+			/* Navigator */
+			////
+			#slideshow {
+				position:relative;
+				height:460px;
+			}
+
+			#slideshow IMG {
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:8;
+				opacity:0.0;
+			}
+
+			#slideshow IMG.active {
+				z-index:10;
+				opacity:1.0;
+			}
+
+			#slideshow IMG.last-active {
+				z-index:9;
+			}
+		
+		    /*tulisan berbayang*/
+            stext {
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            }
+			
+			/*menghilangkan garis*/
+			a{
+				text-decoration: none;
+			}
+			/*pembuat lengkungan sudut*/
+			#areaku{
+				color: #555;
+				padding: 10px;
+				border-radius: 15px 
+			}
+			/* unvisited link */
+			a:link {
+				color: white;
+			}
+			/* visited link */
+			a:visited {
+				color:white;
+			}
+			/* mouse over link */
+			a:hover {
+				color:blue;
+			}
+			/* selected link */
+			a:active {
+				color:blue;
+			}
+			/*css searching*/
+			form {
+				height=5
+				margin:2px auto;
+				}
+			.search {
+				background:rgba(50, 50, 50, 0.2);
+				border:0px solid #dbdbdb;
+			}
+			.button {
+				left:-4px;
+				border:2px solid #53bd84;
+				background-color:#53bd84;
+				color:#fafafa;
+			}
+			.button:hover  {
+				background-color:#fafafa;
+				color:#207cca;
+			}
+			/*css menu*/		
+			.float li	{
+				float: left;
+				list-style: none;
+			}
+			.float li a	{
+				color:#fff;
+				text-decoration: none;
+				font-variant: small-caps;
+				background:#000;
+				border: 1px solid black;
+				padding: 10px 15px;
+				-webkit-transition:all 1s ease-out;
+				-moz-transition:all 1s ease-out;
+				-ms-transition:all 1s ease-out;
+				-o-transition:all 1s ease-out;
+				transition:all 1s ease-out;
+			}
+
+			.float a:hover	{
+				text-decoration: none;
+				background:#fff;
+				color: #000;
+			}
+
+			div {
+				background:rgba(0,0,0, 0.8);
+			}
+	</style>

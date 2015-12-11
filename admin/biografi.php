@@ -1,12 +1,5 @@
 <?php
-		$host="localhost";
-		$username="root";
-		$password="";
-		$database="sinopsis";	
-		
-		$koneksi=mysql_connect("$host","$username","$password")or die(mysql_error("Internet anda tidak ada"));
-		$db=mysql_select_db($database) or die(mysql_error());
-
+		include('config.php');
 ?>
 
 <table border="1" bgcolor="black" align="center" width="700" height="170">

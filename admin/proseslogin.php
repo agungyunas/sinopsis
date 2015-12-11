@@ -1,13 +1,6 @@
 <?php
 		session_start();
-		$host="localhost";
-		$username="root";
-		$password="";
-		$database="sinopsis";
-		
-		
-		$koneksi=mysql_connect("$host","$username","$password")or die(mysql_error("Internet anda tidak ada"));
-		$db=mysql_select_db($database) or die(mysql_error());
+		include('config.php');
 		
 		$query="select *from admin where username ='".$_POST['username']."' and password='".$_POST['password']."' and blokir='tidak di blokir'";
 		$hasil=mysql_query($query)or die('query error');

@@ -2,16 +2,6 @@
 
 include('config.php');
 $namafolder="../design/"; //tempat menyimpan file
-$host = "localhost";
-$username ="root";
-$password ="";
-$data_base="sinopsis";
-
-$koneksi = mysql_connect($host,$username,$password) or die ("koneksi error");	
-
-		
-
-mysql_select_db("sinopsis")  or die("Gagal");
 if (!empty($_FILES["gambar"]["tmp_name"]))
 {
     $jenis_gambar=$_FILES['gambar']['type'];
